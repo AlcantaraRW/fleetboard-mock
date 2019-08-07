@@ -17,19 +17,31 @@ namespace FleetboardMock.WebAPI.Controllers
             this.jornadaHubContext = jornadaHubContext;
         }
 
-        [HttpPost("iniciar/{connectionID}")]
-        public IActionResult Iniciar(string connectionID, IniciarJornadaDto iniciarJornadaDto)
-        {
-            jornadaHubContext.Clients.Client(connectionID).Iniciar(iniciarJornadaDto);
-
-            return Ok();
-        }
-
         [HttpPost("finalizar/{connectionID}")]
         public IActionResult Finalizar(string connectionID, FinalizarJornadaDto finalizarJornadaDto)
         {
             jornadaHubContext.Clients.Client(connectionID).Finalizar(finalizarJornadaDto);
+            return Ok();
+        }
 
+        [HttpPost("iniciarViagem/{connectionID}")]
+        public IActionResult IniciarViagem(string connectionID, IniciarViagemDto iniciarViagemDto)
+        {
+            jornadaHubContext.Clients.Client(connectionID).IniciarViagem(iniciarViagemDto);
+            return Ok();
+        }
+
+        [HttpPost("finalizarViagem/{connectionID}")]
+        public IActionResult FinalizarViagem(string connectionID, FinalizarViagemDto finalizarViagemDto)
+        {
+            jornadaHubContext.Clients.Client(connectionID).FinalizarViagem(finalizarViagemDto);
+            return Ok();
+        }
+
+        [HttpPost("iniciarEspera/{connectionID}")]
+        public IActionResult IniciarEspera(string connectionID, IniciarEsperaDto iniciarEsperaDto)
+        {
+            jornadaHubContext.Clients.Client(connectionID).IniciarEspera(iniciarEsperaDto);
             return Ok();
         }
     }

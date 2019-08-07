@@ -8,6 +8,8 @@ namespace FleetboardMock.Domain
 
         public string FleetIDMotorista { get; set; }
 
+        public long VeiculoID { get; set; }
+
         public DateTime Data { get; set; }
 
         public string Localidade { get; set; }

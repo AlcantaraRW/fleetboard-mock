@@ -27,7 +27,6 @@ namespace FleetboardMock.WebAPI
             app.UseSignalR(routes =>
             {
                 routes.MapHub<JornadaHub>(JornadaHub.ROUTE);
-                routes.MapHub<EventoHub>(EventoHub.ROUTE);
             });
 
             if (env.IsDevelopment())

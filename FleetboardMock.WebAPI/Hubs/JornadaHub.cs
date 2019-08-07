@@ -9,14 +9,24 @@ namespace FleetboardMock.WebAPI.Hubs
     {
         public const string ROUTE = "/hubs/jornada";
 
-        public async Task Iniciar(IniciarJornadaDto iniciarJornadaDto)
-        {
-            await Clients.Caller.Iniciar(iniciarJornadaDto);
-        }
-
         public async Task Finalizar(FinalizarJornadaDto finalizarJornadaDto)
         {
             await Clients.Caller.Finalizar(finalizarJornadaDto);
+        }
+
+        public async Task IniciarViagem(IniciarViagemDto iniciarViagemDto)
+        {
+            await Clients.Caller.IniciarViagem(iniciarViagemDto);
+        }
+
+        public async Task FinalizarViagem(FinalizarViagemDto finalizarViagemDto)
+        {
+            await Clients.Caller.FinalizarViagem(finalizarViagemDto);
+        }
+
+        public async Task IniciarEspera(IniciarEsperaDto iniciarEsperaDto)
+        {
+            await Clients.Caller.IniciarEspera(iniciarEsperaDto);
         }
     }
 }

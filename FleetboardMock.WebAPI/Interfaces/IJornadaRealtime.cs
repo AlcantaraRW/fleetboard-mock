@@ -5,8 +5,12 @@ namespace FleetboardMock.WebAPI.Interfaces
 {
     public interface IJornadaRealtime
     {
-        Task Iniciar(IniciarJornadaDto iniciarJornadaDto);
-
         Task Finalizar(FinalizarJornadaDto finalizarJornadaDto);
+
+        Task IniciarViagem(IniciarViagemDto iniciarViagemDto);
+
+        Task FinalizarViagem(FinalizarViagemDto finalizarViagemDto);
+
+        Task IniciarEspera(IniciarEsperaDto iniciarEsperaDto);
     }
 }
