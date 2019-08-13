@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using FleetboardMock.Domain.ModoSombra;
+using System.Threading.Tasks;
 
 namespace FleetboardMock.WebAPI.Interfaces
 {
     public interface IModoSombraRealtime
     {
-        Task Ativar();
+        Task Ativar(ModoSombraDto dto);
 
-        Task Desativar();
+        Task Desativar(ModoSombraDto dto);
     }
 }

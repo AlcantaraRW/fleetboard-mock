@@ -1,4 +1,5 @@
-﻿using FleetboardMock.WebAPI.Hubs;
+﻿using FleetboardMock.Domain.ModoSombra;
+using FleetboardMock.WebAPI.Hubs;
 using FleetboardMock.WebAPI.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -17,17 +18,17 @@ namespace FleetboardMock.WebAPI.Controllers
         }
 
         [HttpPost("ativar/{connectionID}")]
-        public IActionResult AtivarModoSombra(string connectionID)
+        public IActionResult AtivarModoSombra(string connectionID, ModoSombraDto dto)
         {
-            modoSombraHubContext.Clients.Client(connectionID).Ativar();
+            modoSombraHubContext.Clients.Client(connectionID).Ativar(dto);
 
             return Ok();
         }
 
         [HttpPost("desativar/{connectionID}")]
-        public IActionResult DesativarModoSombra(string connectionID)
+        public IActionResult DesativarModoSombra(string connectionID, ModoSombraDto dto)
         {
-            modoSombraHubContext.Clients.Client(connectionID).Desativar();
+            modoSombraHubContext.Clients.Client(connectionID).Desativar(dto);
 
             return Ok();
         }
