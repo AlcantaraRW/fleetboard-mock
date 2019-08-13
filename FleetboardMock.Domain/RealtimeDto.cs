@@ -10,6 +10,10 @@ namespace FleetboardMock.Domain
 
         public long VeiculoID { get; set; }
 
+        public DateTime DataInicioFleetBoard { get; set; }
+
+        public DateTime? DataFimFleetBoard { get; set; }
+
         public DateTime Data { get; set; }
 
         public string Localidade { get; set; }
